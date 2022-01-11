@@ -11,9 +11,9 @@ function Form() {
 
   return (
     <div className="dsmovie-form-container">
-      <img className="dsmovie-movie-card-image" src="url" alt="The Witcher" />
+      <img className="dsmovie-movie-card-image" src={movie.image} alt={movie.title} />
       <div className="dsmovie-card-bottom-container">
-        <h3>"The Witcher"</h3>
+        <h3>{movie.title}</h3>
         <form className="dsmovie-form">
           <div className="form-group dsmovie-form-group">
             <label htmlFor="email">Informe seu email</label>
@@ -33,7 +33,7 @@ function Form() {
             <button type="submit" className="btn btn-primary dsmovie-btn">Salvar</button>
           </div>
         </form >
-        <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
+        <button className="btn btn-secondary dsmovie-btn mt-3">Cancelar</button>
       </div>
     </div>
   );
