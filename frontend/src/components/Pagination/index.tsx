@@ -4,9 +4,10 @@ import './styles.css';
 interface props {
   pagina: number;
   total: number;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-function Pagination({ pagina, total }: props) {
+function Pagination({ pagina, total, setCurrentPage }: props) {
   return (
     <div className="dsmovie-pagination-container">
       <div className="dsmovie-pagination-box">

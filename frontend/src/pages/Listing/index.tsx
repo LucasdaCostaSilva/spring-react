@@ -1,4 +1,4 @@
-import { MoviePage } from "App.types";
+import { Movie, MoviePage } from "App.types";
 import MovieCard from "components/MovieCard";
 import Pagination from "components/Pagination";
 import { useEffect, useState } from "react";
@@ -7,7 +7,7 @@ import { getMovies } from "services/AppServices";
 function Listing() {
 
   const [moviePage, setMoviePage] = useState<MoviePage>();
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
   const pageSize = 12;
 
   useEffect(() => {
@@ -24,16 +24,15 @@ function Listing() {
 
   return (
     <>
-      <Pagination pagina={moviePage?.number || 1} total={moviePage?.totalPages || 1} />
+      <Pagination pagina={moviePage?.number || 1} total={moviePage?.totalPages || 1} setCurrentPage={setCurrentPage} />
       <div className="container">
         <div className="row">
 
-
-          <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-            <MovieCard />
-          </div>
-
-
+          {moviePage?.content.map((movie: Movie) => (
+            <div key={movie.id} className="col-sm-6 col-lg-4 col-xl-3 mb-3">
+              <MovieCard movie={movie} />
+            </div>
+          ))}
 
         </div>
       </div>
