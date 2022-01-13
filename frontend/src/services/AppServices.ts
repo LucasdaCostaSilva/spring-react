@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const base = axios.create({
-  baseURL: `${process.env.BASE_URL}`,
+  baseURL: `${process.env.REACT_APP_BASE_URL}`,
 });
 
 export function getMovie(id: number) {
