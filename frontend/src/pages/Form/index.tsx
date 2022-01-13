@@ -7,7 +7,7 @@ import './styles.css';
 function Form() {
 
   const [movie, setMovie] = useState<Movie>();
-  const { movieId } = useParams();
+  const { movieId } = useParams();// param from url
 
   useEffect(() => {
     getMovie(Number(movieId)).then(res => {
