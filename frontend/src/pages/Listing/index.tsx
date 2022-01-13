@@ -24,7 +24,7 @@ function Listing() {
 
   return (
     <>
-      <Pagination pagina={moviePage?.number || 1} total={moviePage?.totalPages || 1} setCurrentPage={setCurrentPage} />
+      <Pagination pagina={moviePage?.number || 0} total={moviePage?.totalPages || 0} setCurrentPage={setCurrentPage} />
       <div className="container">
         <div className="row">
 
