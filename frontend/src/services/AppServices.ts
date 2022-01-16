@@ -9,7 +9,7 @@ export function getMovie(id: number) {
 }
 
 export function getMovies(page: number, size: number) {
-  return base.get('/movies', { params: { page, size } });
+  return base.get('/movies', { params: { page, size, sort: 'id' } });
 }
 
 export function saveScore(movieId: number, email: string, score: number) {
